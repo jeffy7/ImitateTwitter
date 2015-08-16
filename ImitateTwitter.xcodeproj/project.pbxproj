@@ -17,6 +17,7 @@
 		1707AA061A9F10600083EEF8 /* 20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1707A9FC1A9F10600083EEF8 /* 20.jpg */; };
 		1707AA071A9F10600083EEF8 /* 26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1707A9FD1A9F10600083EEF8 /* 26.jpg */; };
 		1707AA081A9F10600083EEF8 /* 23.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1707A9FE1A9F10600083EEF8 /* 23.jpg */; };
+		1778902D1AC9A141000BBDE3 /* libReveal.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 1778902B1AC9A12B000BBDE3 /* libReveal.dylib */; };
 		17AE5ED21A8A534D00E44E2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AE5ED11A8A534D00E44E2F /* main.m */; };
 		17AE5ED51A8A534D00E44E2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AE5ED41A8A534D00E44E2F /* AppDelegate.m */; };
 		17AE5ED81A8A534D00E44E2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AE5ED71A8A534D00E44E2F /* ViewController.m */; };
@@ -52,6 +53,7 @@
 		1707A9FC1A9F10600083EEF8 /* 20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20.jpg; sourceTree = "<group>"; };
 		1707A9FD1A9F10600083EEF8 /* 26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 26.jpg; sourceTree = "<group>"; };
 		1707A9FE1A9F10600083EEF8 /* 23.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23.jpg; sourceTree = "<group>"; };
+		1778902B1AC9A12B000BBDE3 /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libReveal.dylib; sourceTree = "<group>"; };
 		17AE5ECC1A8A534D00E44E2F /* ImitateTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImitateTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AE5ED01A8A534D00E44E2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AE5ED11A8A534D00E44E2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		17AE5EC31A8A534D00E44E2F = {
 			isa = PBXGroup;
 			children = (
+				1778902B1AC9A12B000BBDE3 /* libReveal.dylib */,
 				17AE5ECE1A8A534D00E44E2F /* ImitateTwitter */,
 				17AE5EE81A8A534D00E44E2F /* ImitateTwitterTests */,
 				17AE5ECD1A8A534D00E44E2F /* Products */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1778902D1AC9A141000BBDE3 /* libReveal.dylib in Resources */,
 				1707AA031A9F10600083EEF8 /* 27.jpg in Resources */,
 				1707AA041A9F10600083EEF8 /* 22.jpg in Resources */,
 				1707AA081A9F10600083EEF8 /* 23.jpg in Resources */,
@@ -398,9 +402,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Reveal.framework\"",
+				);
 				INFOPLIST_FILE = ImitateTwitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -408,9 +424,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"\"$(SRCROOT)/Reveal.framework\"",
+				);
 				INFOPLIST_FILE = ImitateTwitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
